@@ -33,18 +33,22 @@
         </include>
         
         <!-- useless planner -->
-        <node pkg="base_controller" type="useless_planner" name="useless_planner" output="screen">
+        <!-- <node pkg="base_controller" type="useless_planner" name="useless_planner" output="screen">
+            <rosparam file="$(arg useless_planner_conf_file)" command="load" />
+        </node> -->
+
+        <node pkg="base_controller" type="cubic_spline_planner" name="cubic_spline_planner" output="screen">
             <rosparam file="$(arg useless_planner_conf_file)" command="load" />
         </node>
         
         <!-- node pkg="tf" type="static_transform_publisher" name="base_to_laser_link" args="0 0 0 0 0 0 base_link laser_link 100"/ -->
         <node pkg="tf" type="static_transform_publisher" name="laser_link_broadcaster" 
-            unless="$(arg use_classic_urg)"
+            
             args="-0.3 0 0 3.1416 0 3.1416 base_link $(arg laser_frame) 100" />
             
-        <node pkg="tf" type="static_transform_publisher" name="laser_link_broadcaster" 
+        <!--node pkg="tf" type="static_transform_publisher" name="laser_link_broadcaster" 
             if="$(arg use_classic_urg)"
-            args="-0.1376 -0.2384 0 -2.0944 0 3.1416 base_link $(arg laser_frame) 100" />
+            args="-0.1376 -0.2384 0 -2.0944 0 3.1416 base_link $(arg laser_frame) 100" /-->
             <!--args="-0.1376 -0.2384 0 -2.050 0 3.1416 base_link $(arg laser_frame) 100" /-->
             <!--args="-0.1376 -0.2384 0 -2.0450 0 3.1416 base_link $(arg laser_frame) 100" />-->
             <!--args="-0.1376 -0.2384 0 -2.0944 0 3.1416 base_link $(arg laser_frame) 100" /-->

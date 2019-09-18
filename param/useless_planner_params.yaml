@@ -2,7 +2,7 @@ UselessPlanner:
 
 # Robot Configuration Parameters - TR
 
-  vel_lim_lin: 2.50 # choose slightly less than the base's capability
+  vel_lim_lin: 1.00 # choose slightly less than the base's capability
   
   # 遅い？
   # 回転角速度の最大値を上げるとき，k_angを適度に小さくしなきゃいけないと思う
@@ -12,7 +12,7 @@ UselessPlanner:
 #  acc_lim_ang: 1.5
   
   #acc_lim_lin: 2.00 # maximum is theoretically 3.0.
-  acc_lim_lin: 2.50 # maximum is theoretically 3.0.
+  acc_lim_lin: 2.00 # maximum is theoretically 3.0.
   # OR 2.5
   
   dec_lim_lin: 3.50
@@ -36,9 +36,9 @@ UselessPlanner:
 # Goal Tolerance Parameters
   goal_tolerance_ang: 0.025   # in radian? previously 0.3
   goal_tolerance_lin: 0.025   # in metre,  previously 0.15
-  wp_tolerance_lin: 1.25      # trans waypoint tolerance in metre
+  #wp_tolerance_lin: 1.25      # trans waypoint tolerance in metre
   #粒度が荒い時は0.75で十分なのだけど，粒度を上げると遅くてかなわん
-  #wp_tolerance_lin: 0.75      # trans waypoint tolerance in metre
+  wp_tolerance_lin: 2.00     # trans waypoint tolerance in metre
 
   #tan_half_value_diff_nor: -1.0
   tan_half_value_diff_nor: 0.200
